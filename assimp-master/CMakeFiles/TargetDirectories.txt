@@ -1,0 +1,13 @@
+D:/FinalTeam/FinalTeam/assimp-master/CMakeFiles/uninstall.dir
+D:/FinalTeam/FinalTeam/assimp-master/CMakeFiles/UpdateAssimpLibsDebugSymbolsAndDLLs.dir
+D:/FinalTeam/FinalTeam/assimp-master/CMakeFiles/INSTALL.dir
+D:/FinalTeam/FinalTeam/assimp-master/CMakeFiles/ALL_BUILD.dir
+D:/FinalTeam/FinalTeam/assimp-master/CMakeFiles/ZERO_CHECK.dir
+D:/FinalTeam/FinalTeam/assimp-master/contrib/zlib/CMakeFiles/zlibstatic.dir
+D:/FinalTeam/FinalTeam/assimp-master/contrib/zlib/CMakeFiles/INSTALL.dir
+D:/FinalTeam/FinalTeam/assimp-master/contrib/zlib/CMakeFiles/ALL_BUILD.dir
+D:/FinalTeam/FinalTeam/assimp-master/code/CMakeFiles/assimp.dir
+D:/FinalTeam/FinalTeam/assimp-master/code/CMakeFiles/INSTALL.dir
+D:/FinalTeam/FinalTeam/assimp-master/test/CMakeFiles/unit.dir
+D:/FinalTeam/FinalTeam/assimp-master/test/CMakeFiles/INSTALL.dir
+D:/FinalTeam/FinalTeam/assimp-master/test/headercheck/CMakeFiles/INSTALL.dir
