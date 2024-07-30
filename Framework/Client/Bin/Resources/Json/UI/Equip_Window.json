@@ -1,0 +1,22 @@
+[
+  {
+    "bRenderFontNum": false,
+    "bRenderFontText": false,
+    "fAngle": 0.0,
+    "fFontSize": 1.0,
+    "fInitSizeX": 434.79998779296875,
+    "fInitSizeY": 93.18000030517578,
+    "fInitX": 205.1999969482422,
+    "fInitY": 46.5,
+    "iPrototypeID": 17938,
+    "iRenderLayer": 500,
+    "iTextureIdx": 0,
+    "strText": "",
+    "vFontColorw": 1.0,
+    "vFontColorx": 1.0,
+    "vFontColory": 1.0,
+    "vFontColorz": 1.0,
+    "vFontPosx": 0.0,
+    "vFontPosy": 0.0
+  }
+]

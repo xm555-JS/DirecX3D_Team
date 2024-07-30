@@ -1,0 +1,43 @@
+[  
+  {
+    "bRenderFontNum": false,
+    "bRenderFontText": false,
+    "fAngle": 0.0,
+    "fFontSize": 1.0,
+    "fInitSizeX": 199.92465209960938,
+    "fInitSizeY": 38.729000091552734,
+    "fInitX": 1174.0,
+    "fInitY": 192.0,
+    "iPrototypeID": 23570,
+    "iRenderLayer": 1000,
+    "iTextureIdx": 2,
+    "strText": "",
+    "vFontColorw": 1.0,
+    "vFontColorx": 1.0,
+    "vFontColory": 1.0,
+    "vFontColorz": 1.0,
+    "vFontPosx": 0.0,
+    "vFontPosy": 0.0
+  },
+  {
+    "bRenderFontNum": false,
+    "bRenderFontText": false,
+    "fAngle": 0.0,
+    "fFontSize": 1.0,
+    "fInitSizeX": 200.0,
+    "fInitSizeY": 32.14299774169922,
+    "fInitX": 1185.0,
+    "fInitY": 195.0,
+    "iPrototypeID": 23570,
+    "iRenderLayer": 1000,
+    "iTextureIdx": 5,
+    "strText": "",
+    "vFontColorw": 1.0,
+    "vFontColorx": 1.0,
+    "vFontColory": 1.0,
+    "vFontColorz": 1.0,
+    "vFontPosx": 0.0,
+    "vFontPosy": 0.0
+  }
+]
+
