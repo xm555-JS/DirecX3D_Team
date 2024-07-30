@@ -1,0 +1,35 @@
+#pragma once
+
+#include "Client_Defines.h"
+#include "State_Boss.h"
+
+BEGIN(Client)
+
+class CState_Dragon_Attack2 : public CState_Boss
+{
+public:
+	CState_Dragon_Attack2(CState_Manager* pManager, STATE_TYPE eState);
+	CState_Dragon_Attack2(const CState_Dragon_Attack2& rhs);
+	virtual ~CState_Dragon_Attack2() = default;
+
+public:
+	virtual HRESULT	Initialize_Prototype() override;
+	virtual HRESULT Initialize(void* pArg) override;
+	virtual void Enter(void* pArg = nullptr) override;
+	virtual void Tick(_float fTimeDelta) override;
+	virtual void Exit(void* pArg = nullptr) override;
+
+private:
+	_bool	m_bAttack[10] = { false, };
+
+public:
+	virtual _bool Check_Condition(CState_Handler* pHandler) override;
+
+public:
+	static CState_Dragon_Attack2* Create(CState_Manager* pManager, STATE_TYPE eState);
+	virtual CState* Clone(void* pArg) override;
+	virtual void Free() override;
+};
+
+END
+

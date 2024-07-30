@@ -1,0 +1,2459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1BCC3333-B618-4C65-B874-3A797214F960}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Client</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../../Reference/Headers/; ../Public/</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <UnityFilesDirectory>$(ProjectDir)</UnityFilesDirectory>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <IncludeInUnityFile>true</IncludeInUnityFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../Reference/Librarys/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;fmodex64_vc.lib;fmod64_vc.lib;DirectXTKd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>del  	"$(ProjectDir)unity_*"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../../Reference/Headers/; ../Public/</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <UnityFilesDirectory>$(ProjectDir)</UnityFilesDirectory>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/std:c++17 %(AdditionalOptions)</AdditionalOptions>
+      <IncludeInUnityFile>true</IncludeInUnityFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../Reference/Librarys/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;fmodex64_vc.lib;fmod64_vc.lib;DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>del  	"$(ProjectDir)unity_*"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Bin\ShaderFiles\Client_Shader_Defines.hpp" />
+    <ClInclude Include="..\Bin\ShaderFiles\Client_Shader_Function.hlsl" />
+    <ClInclude Include="..\public\Anim_Default.h" />
+    <ClInclude Include="..\public\Bullet.h" />
+    <ClInclude Include="..\Public\Bullet_Player_2Gun_Normal.h" />
+    <ClInclude Include="..\Public\Bullet_Player_2Gun_Special.h" />
+    <ClInclude Include="..\Public\Bullet_Player_2Gun_Special_Sub.h" />
+    <ClInclude Include="..\Public\Bullet_Player_2Gun_Zoom.h" />
+    <ClInclude Include="..\Public\Bullet_Player_Cube.h" />
+    <ClInclude Include="..\Public\Camera_Action.h" />
+    <ClInclude Include="..\Public\Bullet_Player_Cube_Main.h" />
+    <ClInclude Include="..\Public\Camera_Fixed.h" />
+    <ClInclude Include="..\Public\Camera_Free.h" />
+    <ClInclude Include="..\Public\Camera_Target_Matrix.h" />
+    <ClInclude Include="..\Public\AnimObject.h" />
+    <ClInclude Include="..\Public\Camera_Target_Position.h" />
+    <ClInclude Include="..\Public\Camera_Target_Position_Lerp.h" />
+    <ClInclude Include="..\Public\Client_Defines.h" />
+    <ClInclude Include="..\Public\Client_Enum.h" />
+    <ClInclude Include="..\Public\Client_Functor.h" />
+    <ClInclude Include="..\Public\Client_Macro.h" />
+    <ClInclude Include="..\Public\Client_Struct.h" />
+    <ClInclude Include="..\Public\Bullet_Player_2Gun.h" />
+    <ClInclude Include="..\Public\Coin.h" />
+    <ClInclude Include="..\Public\Effect_Base.h" />
+    <ClInclude Include="..\Public\Enemy_Boss_Leviathan.h" />
+    <ClInclude Include="..\Public\Enemy_Boss_Leviathan_90m.h" />
+    <ClInclude Include="..\Public\Cloud.h" />
+    <ClInclude Include="..\Public\Cloud_Sky.h" />
+    <ClInclude Include="..\Public\Enemy_Robella_FireBall.h" />
+    <ClInclude Include="..\Public\Enemy_Leviathan_FireBall.h" />
+    <ClInclude Include="..\Public\Enemy_Robella_FireBall2.h" />
+    <ClInclude Include="..\Public\Enemy_Robella_FireStrom.h" />
+    <ClInclude Include="..\Public\Enemy_Robella_FireStrom2.h" />
+    <ClInclude Include="..\Public\Enemy_Robella_PoisonFog.h" />
+    <ClInclude Include="..\Public\Effect_Trail.h" />
+    <ClInclude Include="..\Public\Enemy_Leviathan_Thunder.h" />
+    <ClInclude Include="..\Public\Enemy_Leviathan_IceSpear.h" />
+    <ClInclude Include="..\Public\Enemy_Weaver_Frozen.h" />
+    <ClInclude Include="..\Public\Enemy_Weaver_Hurricane.h" />
+    <ClInclude Include="..\Public\Enemy_Weaver_ShockWave.h" />
+    <ClInclude Include="..\Public\Equipment.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Dead.h" />
+    <ClInclude Include="..\Public\State_Weaver_CameraAction.h" />
+    <ClInclude Include="..\Public\State_Robella_CameraAction.h" />
+    <ClInclude Include="..\Public\State_Dragon_CameraAction.h" />
+    <ClInclude Include="..\Public\State_Player_Skate.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Call.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Jump_Landing.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Jump_Up.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Run_Hover.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Run_Swerve_L.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Run_Swerve_R.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Stop_Land.h" />
+    <ClInclude Include="..\Public\State_Player_Skate_Stop_Water.h" />
+    <ClInclude Include="..\Public\Leviathan_Crystal.h" />
+    <ClInclude Include="..\Public\Time_Illusion.h" />
+    <ClInclude Include="..\Public\Grass_Desert.h" />
+    <ClInclude Include="..\Public\GrassMesh.h" />
+    <ClInclude Include="..\Public\Gray_Rock.h" />
+    <ClInclude Include="..\Public\Light_Sun.h" />
+    <ClInclude Include="..\Public\Light_Target.h" />
+    <ClInclude Include="..\Public\Minigame_Manager.h" />
+    <ClInclude Include="..\Public\Mobility_Glider.h" />
+    <ClInclude Include="..\Public\Mobility_MotorCycle.h" />
+    <ClInclude Include="..\Public\Npc_Cooker.h" />
+    <ClInclude Include="..\Public\Dragon_Appear_Trigger.h" />
+    <ClInclude Include="..\Public\Enemy_Boomb_Dragon.h" />
+    <ClInclude Include="..\Public\Enemy_Boss_Dragon.h" />
+    <ClInclude Include="..\Public\Enemy_Boss_Robella.h" />
+    <ClInclude Include="..\Public\Enemy_Boss_Weaver.h" />
+    <ClInclude Include="..\Public\Bullet_Laser.h" />
+    <ClInclude Include="..\Public\Bullet_Normal.h" />
+    <ClInclude Include="..\Public\Enemy_Thunder_Dragon.h" />
+    <ClInclude Include="..\Public\Enemy_Arrow.h" />
+    <ClInclude Include="..\Public\Gangster_Cap.h" />
+    <ClInclude Include="..\Public\Enemy_Bullet_Dragon.h" />
+    <ClInclude Include="..\Public\HunterDog.h" />
+    <ClInclude Include="..\Public\HyenaGang_Shooter.h" />
+    <ClInclude Include="..\Public\Habaka_Admiral.h" />
+    <ClInclude Include="..\Public\Item.h" />
+    <ClInclude Include="..\Public\Item_Manager.h" />
+    <ClInclude Include="..\Public\MechanicalCity_DoorKeeper.h" />
+    <ClInclude Include="..\Public\MechanicalCity_Gunner.h" />
+    <ClInclude Include="..\Public\MechanicalCity_SwordGhost.h" />
+    <ClInclude Include="..\Public\Mutation_HunterDog.h" />
+    <ClInclude Include="..\Public\MechanicalCity_DoubleEdgedSwordAdept.h" />
+    <ClInclude Include="..\Public\Mutation_Orc.h" />
+    <ClInclude Include="..\Public\Mutation_Mechanic.h" />
+    <ClInclude Include="..\Public\Npc.h" />
+    <ClInclude Include="..\Public\Npc_Shirley.h" />
+    <ClInclude Include="..\Public\Order.h" />
+    <ClInclude Include="..\Public\Order_Manager.h" />
+    <ClInclude Include="..\public\Portal.h" />
+    <ClInclude Include="..\Public\Quest.h" />
+    <ClInclude Include="..\Public\Quest_Manager.h" />
+    <ClInclude Include="..\Public\Region.h" />
+    <ClInclude Include="..\Public\Ring.h" />
+    <ClInclude Include="..\Public\Rock_All.h" />
+    <ClInclude Include="..\Public\Room.h" />
+    <ClInclude Include="..\Public\Shelf_Item.h" />
+    <ClInclude Include="..\Public\Stair.h" />
+    <ClInclude Include="..\Public\State_Angel_Apear.h" />
+    <ClInclude Include="..\Public\Effect_Factory.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Effect_Manager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Effect_Mesh.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Effect_Point.h" />
+    <ClInclude Include="..\Public\Effect_Rect.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Enemy_Boss.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Enemy_Boss_Angel.h" />
+    <ClInclude Include="..\Public\Enemy_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\MapObj_Instance.h" />
+    <ClInclude Include="..\Public\HyenaGang_Minions.h" />
+    <ClInclude Include="..\Public\Mutation.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_AI.h" />
+    <ClInclude Include="..\public\State_Angel_Apear_Ready.h" />
+    <ClInclude Include="..\public\State_Angel_Dead.h" />
+    <ClInclude Include="..\public\State_Angel_Idle.h" />
+    <ClInclude Include="..\public\State_Angel_Laser_Attack.h" />
+    <ClInclude Include="..\public\State_Angel_Laser_SkillA.h" />
+    <ClInclude Include="..\public\State_Angel_Laser_SkillA_L.h" />
+    <ClInclude Include="..\public\State_Angel_Laser_SkillA_R.h" />
+    <ClInclude Include="..\public\State_Angel_Laser_SkillB.h" />
+    <ClInclude Include="..\public\State_Angel_Laser_Skill_End.h" />
+    <ClInclude Include="..\public\State_Angel_Reset.h" />
+    <ClInclude Include="..\public\State_Angel_Run.h" />
+    <ClInclude Include="..\public\State_Angel_Run_L.h" />
+    <ClInclude Include="..\public\State_Angel_Run_R.h" />
+    <ClInclude Include="..\public\State_Angel_Shield.h" />
+    <ClInclude Include="..\public\State_Angel_Swing_Attack.h" />
+    <ClInclude Include="..\public\State_Angel_Ult_Skill_End.h" />
+    <ClInclude Include="..\public\State_Angel_Ult_Skill_Start.h" />
+    <ClInclude Include="..\Public\State_Angel_BackWard.h" />
+    <ClInclude Include="..\public\State_Angel_Turn_L.h" />
+    <ClInclude Include="..\public\State_Angel_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Boss_Attack.h" />
+    <ClInclude Include="..\Public\State_Boss_Awake.h" />
+    <ClInclude Include="..\Public\State_Boss_Dash.h" />
+    <ClInclude Include="..\Public\State_Boss_Idle.h" />
+    <ClInclude Include="..\Public\State_Boss_JumpAttack.h" />
+    <ClInclude Include="..\Public\State_Boss_KeepAttack.h" />
+    <ClInclude Include="..\Public\State_Boss_Shield.h" />
+    <ClInclude Include="..\Public\State_Boss_SitDown.h" />
+    <ClInclude Include="..\Public\State_Boss_SwingAttack.h" />
+    <ClInclude Include="..\Public\State_Boss_UltraAttack.h" />
+    <ClInclude Include="..\public\State_Boss.h" />
+    <ClInclude Include="..\Public\State_Cooker_Cooking.h" />
+    <ClInclude Include="..\Public\State_Cooker_Cooking_Complete.h" />
+    <ClInclude Include="..\Public\State_Cooker_Idle.h" />
+    <ClInclude Include="..\Public\State_Dragon_Apear.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack1.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack2.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack3.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack4.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack5.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack6.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack7.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack8.h" />
+    <ClInclude Include="..\Public\State_Dragon_Attack9.h" />
+    <ClInclude Include="..\Public\State_Dragon_Bullet.h" />
+    <ClInclude Include="..\Public\State_Dragon_Chase.h" />
+    <ClInclude Include="..\Public\State_Dragon_Dead.h" />
+    <ClInclude Include="..\Public\State_Dragon_DoEnd.h" />
+    <ClInclude Include="..\Public\State_Dragon_Fall_Land.h" />
+    <ClInclude Include="..\Public\State_Dragon_Fall_Loop.h" />
+    <ClInclude Include="..\Public\State_Dragon_Idle.h" />
+    <ClInclude Include="..\Public\State_Dragon_Patrol.h" />
+    <ClInclude Include="..\Public\State_Dragon_Patrol_Apear.h" />
+    <ClInclude Include="..\Public\State_Dragon_Run.h" />
+    <ClInclude Include="..\Public\State_Dragon_RunEnd.h" />
+    <ClInclude Include="..\Public\State_Dragon_TurnL.h" />
+    <ClInclude Include="..\Public\State_Dragon_TurnR.h" />
+    <ClInclude Include="..\Public\State_Dragon_Ult_Attack1.h" />
+    <ClInclude Include="..\Public\State_Dragon_Ult_Attack2.h" />
+    <ClInclude Include="..\Public\State_Dragon_Ult_Attack3.h" />
+    <ClInclude Include="..\Public\State_Dragon_Weak_Begin.h" />
+    <ClInclude Include="..\Public\State_Dragon_Weak_End.h" />
+    <ClInclude Include="..\Public\State_Dragon_Weak_Loop.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Attack_Chop.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Attack_JumpChop.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Attack_KeepHitting.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Damage_B2.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Special_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Special_Ing.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Special_Begin.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Dash.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Swing.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Attack_Stand.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Attack_Moving.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Attack_FrontJump.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Attack_Kick_A.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Damage_F.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Idle_Normal.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Attack_SeriesShot_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Attack_SeriesShot_Ing.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Attack_ThrowBomb.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Attack_SeriesShot_Begin.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Damage_F.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Eat_Find.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Eat.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Attack_DownHit.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Attack_UpHit.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Damage_F.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Damage_F.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Idle_Normal.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Attack_Charge_Shot.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Attack_Normal_Shot.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Damage_F.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Idle_Battle.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Idle_Battle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Idle_Normal.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Walk_F.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Shooter_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Mechanic_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Habaka_Admiral_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Normal.h" />
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoorKeeper_Idle_Normal.h" />
+    <ClInclude Include="..\Public\State_Leviathan.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Apear.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_BL_A.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_BL_B.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_BL_C.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_F_C.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_FR.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_F_A.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Down_F_B.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Up_BR.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Up_F.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Attack_Up_FL.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Turn.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Jump_Turn.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Idle.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Jump_TurnL.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Jump_TurnR.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Look_Center_Roar.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Roar_0.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Look_Out_Roar.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Walk.h" />
+    <ClInclude Include="..\Public\State_Leviathan_Weak.h" />
+    <ClInclude Include="..\Public\State_MotorCycle.h" />
+    <ClInclude Include="..\Public\State_MotorCycle_Idle.h" />
+    <ClInclude Include="..\Public\State_MotorCycle_Jump_End.h" />
+    <ClInclude Include="..\Public\State_MotorCycle_Jump_Loop.h" />
+    <ClInclude Include="..\Public\State_MotorCycle_Jump_Run.h" />
+    <ClInclude Include="..\Public\State_MotorCycle_Jump_Start.h" />
+    <ClInclude Include="..\Public\State_MotorCycle_Run.h" />
+    <ClInclude Include="..\Public\State_Npc.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_A.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_B.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Base_Charge.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_C.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_D.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Jump_Charge_A.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Jump_Charge_B.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Jump_Charge_C.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Skill_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Skill_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Attack_Skill_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Axe_Skill_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Down.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Into_Down.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Into_Up.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Down.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Roll_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Roll_End.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Roll_Up_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Roll_Up_End.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Left_Up.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Out.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Out_Jump.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Out_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Down.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Roll_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Roll_End.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Roll_Up_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Roll_Up_End.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Right_Up.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Stop.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Up_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Climb_Up_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_Cube.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_A.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_B.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Base_Charge.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_C.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_D.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_E.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Jump_Charge_A.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Jump_Charge_B.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Jump_Charge_C.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Skill_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Skill_Normal_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Skill_Special.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Attack_Skill_Special_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Cube_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_Begin_F.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_End.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_Loop.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_Loop_F.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_Stop.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_Up.h" />
+    <ClInclude Include="..\Public\State_Player_Glide_Up_End.h" />
+    <ClInclude Include="..\Public\State_Player_Hand_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Hand_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_Hand_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Hand_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_Hand_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Hand_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Drive.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Drive_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Free.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_JumpStart.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Roll_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Roll_Base.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_TurnL.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_TurnR.h" />
+    <ClInclude Include="..\Public\State_Player_Mount_Up.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_A.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_B.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Base_Charge_A.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Base_Charge_B.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Base_Charge_C.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_C.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_D.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Jump_Charge_A.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Jump_Charge_B.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Jump_Charge_C.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Skill_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Skill_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Attack_Skill_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Skill_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Shield_Skill_Special.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Jump_Charge_A.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Jump_Charge_C.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Normal_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Special_A.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Special_B.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Special_C.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Special_D.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Special_E.h" />
+    <ClInclude Include="..\Public\State_Player_UI_2Gun_Appear.h" />
+    <ClInclude Include="..\Public\State_Player_UI_2Gun_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Appear.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Cube_Appear.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Cube_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_UI_None_Appear.h" />
+    <ClInclude Include="..\Public\State_Player_UI_None_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Shield_Appear.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Shield_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Sword_Appear.h" />
+    <ClInclude Include="..\Public\State_Player_UI_Sword_Idle.h" />
+    <ClInclude Include="..\Public\State_Robella_1Phase_Down.h" />
+    <ClInclude Include="..\Public\State_Robella_1Phase_Down_Loop.h" />
+    <ClInclude Include="..\Public\State_Robella_1Phase_Down_Up.h" />
+    <ClInclude Include="..\Public\State_Robella_2Phase_Down.h" />
+    <ClInclude Include="..\Public\State_Robella_2Phase_Down_Up.h" />
+    <ClInclude Include="..\Public\State_Robella_2Phase_Down_Loop.h" />
+    <ClInclude Include="..\Public\State_Robella_Apear.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack2_Begin.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack2_End.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack2_Loop.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack3.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack4.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack5.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack6.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack7.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack8.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack9_Begin.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack9_End.h" />
+    <ClInclude Include="..\Public\State_Robella_Change_Phase.h" />
+    <ClInclude Include="..\Public\State_Robella_Dead.h" />
+    <ClInclude Include="..\Public\State_Robella_UltAttack_Begin.h" />
+    <ClInclude Include="..\Public\State_Robella_UltAttack_End.h" />
+    <ClInclude Include="..\Public\State_Shirley_Brilliant.h" />
+    <ClInclude Include="..\Public\State_Shirley_Conversation_A.h" />
+    <ClInclude Include="..\Public\State_Shirley_Conversation_B.h" />
+    <ClInclude Include="..\Public\State_Shirley_Conversation_C.h" />
+    <ClInclude Include="..\Public\State_Shirley_Greeting.h" />
+    <ClInclude Include="..\Public\State_Shirley_Hungry.h" />
+    <ClInclude Include="..\Public\State_Shirley_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_A.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_WalkBack.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_WalkFront.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_WalkLeft.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_WalkRight.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_Zoom.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Base_Charge_Zoom_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Jump_Charge_A.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Jump_Charge_B.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_Jump_Charge_C.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_B.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_C.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_D.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Attack_E.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Skill_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Skill_Normal_Air.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Skill_Special.h" />
+    <ClInclude Include="..\Public\State_Player_2Gun_Skill_Special_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Attack.h" />
+    <ClInclude Include="..\Public\State_Player_Attack_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Attack_Base_Charge.h" />
+    <ClInclude Include="..\Public\State_Player_Attack_Jump_Charge.h" />
+    <ClInclude Include="..\Public\State_Player_Attack_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_Damaged_High_Begin.h" />
+    <ClInclude Include="..\Public\State_Player_Damaged_High_End.h" />
+    <ClInclude Include="..\Public\State_Player_Damaged_Low.h" />
+    <ClInclude Include="..\Public\State_Player_Damaged_Medium.h" />
+    <ClInclude Include="..\Public\State_Player_Eat.h" />
+    <ClInclude Include="..\Public\State_Player_Skill_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Skill_Normal_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Skill_Special.h" />
+    <ClInclude Include="..\Public\State_Player_Skill_Special_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Swim_Dash.h" />
+    <ClInclude Include="..\Public\State_Player_Swim_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Swim_Loop_A.h" />
+    <ClInclude Include="..\Public\State_Player_Swim_Loop_B.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Normal.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Skill_Special.h" />
+    <ClInclude Include="..\Public\State_Robella_1Phase.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Dance.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Idle_Normal.h" />
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Run.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Run_Return.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Sit.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_SitIdle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Attack_Swing.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Attack_TurnTurn.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Sittingdown.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Attack_Dash.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_StandUp.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Walk.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Walk_B.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Walk_F.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Walk_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Gangster_Cap_Walk_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Dead_End.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Dead_1.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Run.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Idle_Battle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Attack_Bite.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Attack_Find_Dash_Bite.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Walk_Turn_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Walk_Turn_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Walk_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Walk_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Walk_B.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Walk.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Run_Return.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Idle_Act_A.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Run.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Run_Return.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Turn_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Turn_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Attack_Normal_Shot.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Attack_Charge_Shot.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Damage_F.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Damage_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Damage_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Damage_B.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Walk.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Walk_B.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Walk_F.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Walk_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HyenaGang_Minions_Walk_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Damage_L.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Damage_R.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Damage_B_Back.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_HunterDog_Damage_B.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_Gunner_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_SwordGhost_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Dead_2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Dead_3.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Dead_End.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Dead_1.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Damage_B.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Damage_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Damage_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Attack_UpHit.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Attack_DownHit.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_HunterDog_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Orc_Idle_Normal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Run_Return.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Skill_.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Idle_Normal.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Run.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Walk.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Enemy_Mutation_Walk_R.h" />
+    <ClInclude Include="..\public\State_Handler.h" />
+    <ClInclude Include="..\public\State.h" />
+    <ClInclude Include="..\Public\Enemy.h" />
+    <ClInclude Include="..\Public\imconfig.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imgui.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Imgui_Manager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imgui_impl_dx11.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imgui_impl_win32.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imgui_internal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imstb_rectpack.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imstb_textedit.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\imstb_truetype.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Level_Edit_Anim.h" />
+    <ClInclude Include="..\Public\Level_Edit_UI.h" />
+    <ClInclude Include="..\Public\Level_GamePlay.h" />
+    <ClInclude Include="..\Public\Level_Loading.h" />
+    <ClInclude Include="..\Public\Level_Logo.h" />
+    <ClInclude Include="..\Public\Level_Menu.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Loader.h" />
+    <ClInclude Include="..\Public\Loader_Edit_Anim.h" />
+    <ClInclude Include="..\Public\Loader_Edit_UI.h" />
+    <ClInclude Include="..\Public\Loader_GamePlay.h" />
+    <ClInclude Include="..\public\Loader_Logo.h" />
+    <ClInclude Include="..\Public\Loader_Menu.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\public\Loading_Anim.h" />
+    <ClInclude Include="..\Public\MainApp.h" />
+    <ClInclude Include="..\Public\Grass.h" />
+    <ClInclude Include="..\Public\State_Manager.h" />
+    <ClInclude Include="..\Public\State_Player.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_A.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Air_A.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Air_B.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Air_C.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Air_D.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_B.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_C.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Base_Charge.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_D.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_E.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Jump_Charge_B.h" />
+    <ClInclude Include="..\Public\State_Player_Sword_Attack_Roll.h" />
+    <ClInclude Include="..\Public\State_Player_Jump_A.h" />
+    <ClInclude Include="..\Public\State_Player_Jump_B.h" />
+    <ClInclude Include="..\Public\State_Player_Jump_End.h" />
+    <ClInclude Include="..\Public\State_Player_Jump_Fall.h" />
+    <ClInclude Include="..\Public\State_Player_Roll_Back.h" />
+    <ClInclude Include="..\Public\State_Player_Roll_Back_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Roll_Forword.h" />
+    <ClInclude Include="..\Public\State_Player_Idle.h" />
+    <ClInclude Include="..\Public\State_Player_Roll_Forword_Air.h" />
+    <ClInclude Include="..\Public\State_Player_Roll_Forword_End.h" />
+    <ClInclude Include="..\Public\State_Player_Run.h" />
+    <ClInclude Include="..\Public\State_Player_Walk.h" />
+    <ClInclude Include="..\Public\State_Robella_2Phase.h" />
+    <ClInclude Include="..\Public\State_Robella_Attack1.h" />
+    <ClInclude Include="..\Public\State_Robella_Ready.h" />
+    <ClInclude Include="..\Public\State_Robella_Patrol.h" />
+    <ClInclude Include="..\Public\State_Shirley_Surprise.h" />
+    <ClInclude Include="..\Public\State_Shirley_Thank.h" />
+    <ClInclude Include="..\Public\State_Shirley_Worry_A.h" />
+    <ClInclude Include="..\Public\State_Shirley_Worry_B.h" />
+    <ClInclude Include="..\Public\State_Weaver_Apear.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_01.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_02.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_03.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_04.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_05_Begin.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_05_End.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_06_Begin.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_06_Break.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_06_End.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_06_Loop.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_07.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_08.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_09.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_10.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_11_Begin.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_11_End.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_11_Loop.h" />
+    <ClInclude Include="..\Public\State_Weaver_Attack_12.h" />
+    <ClInclude Include="..\Public\State_Weaver_Dead.h" />
+    <ClInclude Include="..\Public\State_Weaver_Idle.h" />
+    <ClInclude Include="..\Public\State_Weaver_Ready.h" />
+    <ClInclude Include="..\Public\State_Weaver_Reset.h" />
+    <ClInclude Include="..\Public\State_Weaver_Shield.h" />
+    <ClInclude Include="..\Public\State_Weaver_Turn_L.h" />
+    <ClInclude Include="..\Public\State_Weaver_Turn_R.h" />
+    <ClInclude Include="..\Public\State_Weaver_Walk_B.h" />
+    <ClInclude Include="..\Public\State_Weaver_Walk_F.h" />
+    <ClInclude Include="..\Public\State_Weaver_Walk_L.h" />
+    <ClInclude Include="..\Public\State_Weaver_Walk_R.h" />
+    <ClInclude Include="..\Public\State_Weaver_Weak_Begin.h" />
+    <ClInclude Include="..\Public\State_Weaver_Weak_End.h" />
+    <ClInclude Include="..\Public\State_Weaver_Weak_Loop.h" />
+    <ClInclude Include="..\Public\Structs.h" />
+    <ClInclude Include="..\Public\Structs_All.h" />
+    <ClInclude Include="..\Public\Structs_Desert.h" />
+    <ClInclude Include="..\Public\Terrain_Navi.h" />
+    <ClInclude Include="..\Public\TestPlayer.h" />
+    <ClInclude Include="..\Public\Tree.h" />
+    <ClInclude Include="..\Public\Tile.h" />
+    <ClInclude Include="..\Public\Rock.h" />
+    <ClInclude Include="..\Public\Player.h" />
+    <ClInclude Include="..\Public\Sky.h" />
+    <ClInclude Include="..\Public\Sound_Manager.h" />
+    <ClInclude Include="..\Public\Terrain.h" />
+    <ClInclude Include="..\Public\UI.h" />
+    <ClInclude Include="..\Public\UI_Alert_Icon.h" />
+    <ClInclude Include="..\Public\UI_Alert_Window.h" />
+    <ClInclude Include="..\Public\UI_Attacked_Num.h" />
+    <ClInclude Include="..\Public\UI_Attack_Target.h" />
+    <ClInclude Include="..\Public\UI_Boss_Hp_Back.h" />
+    <ClInclude Include="..\Public\UI_Boss_Hp_Bar.h" />
+    <ClInclude Include="..\Public\UI_Boss_Hp_Lerp.h" />
+    <ClInclude Include="..\Public\UI_Boss_Name.h" />
+    <ClInclude Include="..\Public\UI_Cook_Button.h" />
+    <ClInclude Include="..\Public\UI_Cook_Detail.h" />
+    <ClInclude Include="..\Public\UI_Cook_FoodSelect.h" />
+    <ClInclude Include="..\Public\UI_Cook_GaugeBar.h" />
+    <ClInclude Include="..\Public\UI_Cook_GaugeNum.h" />
+    <ClInclude Include="..\Public\UI_Cook_Icon.h" />
+    <ClInclude Include="..\Public\UI_Cook_IngrdNum.h" />
+    <ClInclude Include="..\Public\UI_Cook_Window.h" />
+    <ClInclude Include="..\Public\UI_Crystal_Hp_Bar.h" />
+    <ClInclude Include="..\Public\UI_CurFood_Icon.h" />
+    <ClInclude Include="..\Public\UI_CurFood_Num.h" />
+    <ClInclude Include="..\Public\UI_Cursor.h" />
+    <ClInclude Include="..\Public\UI_Damage_Num.h" />
+    <ClInclude Include="..\Public\UI_Dash_Bar.h" />
+    <ClInclude Include="..\Public\UI_Dist_Num.h" />
+    <ClInclude Include="..\Public\UI_Enemy_Attack.h" />
+    <ClInclude Include="..\Public\UI_Enemy_Hp_Bar.h" />
+    <ClInclude Include="..\Public\UI_Enemy_Indicator.h" />
+    <ClInclude Include="..\Public\UI_Enemy_Name.h" />
+    <ClInclude Include="..\Public\UI_Enemy_Rank.h" />
+    <ClInclude Include="..\Public\UI_Cook_Food.h" />
+    <ClInclude Include="..\Public\UI_Energy_Gear.h" />
+    <ClInclude Include="..\Public\UI_Equip_Button.h" />
+    <ClInclude Include="..\Public\UI_Equip_Detail.h" />
+    <ClInclude Include="..\Public\UI_Equip_Icon.h" />
+    <ClInclude Include="..\Public\UI_Equip_Remove.h" />
+    <ClInclude Include="..\Public\UI_Equip_Weapon_L.h" />
+    <ClInclude Include="..\Public\UI_Equip_Weapon_M.h" />
+    <ClInclude Include="..\Public\UI_Equip_Weapon_R.h" />
+    <ClInclude Include="..\Public\UI_Equip_Window.h" />
+    <ClInclude Include="..\Public\UI_Fin.h" />
+    <ClInclude Include="..\Public\UI_Food_Icon.h" />
+    <ClInclude Include="..\Public\UI_Minigame_Explain.h" />
+    <ClInclude Include="..\Public\UI_Minigame_Gain.h" />
+    <ClInclude Include="..\Public\UI_Minigame_Notice.h" />
+    <ClInclude Include="..\Public\UI_Minigame_Result.h" />
+    <ClInclude Include="..\Public\UI_Minigame_Start.h" />
+    <ClInclude Include="..\Public\UI_Minimap.h" />
+    <ClInclude Include="..\Public\UI_Minimap_Arrow.h" />
+    <ClInclude Include="..\Public\UI_Order.h" />
+    <ClInclude Include="..\Public\UI_Guide_Hand_Anim.h" />
+    <ClInclude Include="..\Public\UI_Guide_Talk_Anim.h" />
+    <ClInclude Include="..\Public\UI_Guide_Window.h" />
+    <ClInclude Include="..\Public\UI_Gun_CrossHair.h" />
+    <ClInclude Include="..\Public\UI_Heal_Num.h" />
+    <ClInclude Include="..\Public\UI_Cook_Ingredient.h" />
+    <ClInclude Include="..\Public\UI_Inventory.h" />
+    <ClInclude Include="..\Public\UI_Inven_Button.h" />
+    <ClInclude Include="..\Public\UI_Food_Window.h" />
+    <ClInclude Include="..\Public\UI_Inven_Icon.h" />
+    <ClInclude Include="..\Public\UI_Item.h" />
+    <ClInclude Include="..\Public\UI_Food_Num.h" />
+    <ClInclude Include="..\Public\UI_Item_Detail.h" />
+    <ClInclude Include="..\Public\UI_Item_Num.h" />
+    <ClInclude Include="..\Public\UI_Loading_Anim.h" />
+    <ClInclude Include="..\Public\UI_Loading_Bar.h" />
+    <ClInclude Include="..\Public\AnimGround.h" />
+    <ClInclude Include="..\Public\UI_Loading_Screen.h" />
+    <ClInclude Include="..\Public\UI_Logo.h" />
+    <ClInclude Include="..\Public\UI_Logo_Back.h" />
+    <ClInclude Include="..\Public\UI_Logo_Start.h" />
+    <ClInclude Include="..\Public\UI_Main_Button.h" />
+    <ClInclude Include="..\Public\UI_Main_Icon.h" />
+    <ClInclude Include="..\Public\UI_Menu_Back.h" />
+    <ClInclude Include="..\Public\UI_Menu_Button.h" />
+    <ClInclude Include="..\Public\UI_Order_Anim.h" />
+    <ClInclude Include="..\Public\UI_Order_Button.h" />
+    <ClInclude Include="..\Public\UI_Order_Icon.h" />
+    <ClInclude Include="..\Public\UI_Order_Item.h" />
+    <ClInclude Include="..\Public\UI_Order_ItemName.h" />
+    <ClInclude Include="..\Public\UI_Order_Result.h" />
+    <ClInclude Include="..\Public\UI_Order_ResultButton.h" />
+    <ClInclude Include="..\Public\UI_Order_TenResult.h" />
+    <ClInclude Include="..\Public\UI_PlaceMark.h" />
+    <ClInclude Include="..\Public\UI_PlaceName.h" />
+    <ClInclude Include="..\Public\UI_Player_Hp_Back.h" />
+    <ClInclude Include="..\Public\UI_Player_Hp_Bar.h" />
+    <ClInclude Include="..\Public\UI_Proceeding.h" />
+    <ClInclude Include="..\Public\UI_Quest.h" />
+    <ClInclude Include="..\Public\UI_Quest_Complete.h" />
+    <ClInclude Include="..\Public\UI_Quest_Mark.h" />
+    <ClInclude Include="..\Public\UI_Quest_Notice.h" />
+    <ClInclude Include="..\Public\UI_Shortkey.h" />
+    <ClInclude Include="..\Public\UI_Skill_Enable.h" />
+    <ClInclude Include="..\Public\UI_Skill_Gauge.h" />
+    <ClInclude Include="..\Public\UI_Skill_L.h" />
+    <ClInclude Include="..\Public\UI_Skill_M.h" />
+    <ClInclude Include="..\Public\UI_Skill_R.h" />
+    <ClInclude Include="..\Public\UI_Skill_Time.h" />
+    <ClInclude Include="..\Public\UI_Solid.h" />
+    <ClInclude Include="..\Public\UI_Stamina_Back.h" />
+    <ClInclude Include="..\Public\UI_Stamina_Bar.h" />
+    <ClInclude Include="..\Public\UI_Talk_Window.h" />
+    <ClInclude Include="..\Public\UI_Weapon_Skill.h" />
+    <ClInclude Include="..\Public\Unit.h" />
+    <ClInclude Include="..\Public\Water.h" />
+    <ClInclude Include="..\Public\Water_Base.h" />
+    <ClInclude Include="..\Public\Weapon.h" />
+    <ClInclude Include="..\Public\Weapon_2Gun.h" />
+    <ClInclude Include="..\Public\Weapon_Axe.h" />
+    <ClInclude Include="..\Public\Weapon_Bow.h" />
+    <ClInclude Include="..\Public\Weapon_CubeL.h" />
+    <ClInclude Include="..\Public\Weapon_CubeR.h" />
+    <ClInclude Include="..\Public\Weapon_Hammer.h" />
+    <ClInclude Include="..\Public\Weapon_Shield.h" />
+    <ClInclude Include="..\Public\Weapon_ShieldAxe.h" />
+    <ClInclude Include="..\Public\Weapon_Wastebasket.h" />
+    <ClInclude Include="..\Public\Weapon_Stic.h" />
+    <ClInclude Include="..\Public\Weapon_Sword.h" />
+    <ClInclude Include="..\Public\Weapon_Tool.h" />
+    <ClInclude Include="..\Public\Window_Demo.h" />
+    <ClInclude Include="..\public\Window_Imgui.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\public\Window_LevelInfo.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\Public\Window_Tool_Animation.h" />
+    <ClInclude Include="..\Public\Window_Tool_Effect.h" />
+    <ClInclude Include="..\Public\Window_Tool_Option.h" />
+    <ClInclude Include="..\Public\Window_Tool_Map.h" />
+    <ClInclude Include="..\Public\Window_Tool_UI.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\private\Anim_Default.cpp" />
+    <ClCompile Include="..\private\Bullet.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_2Gun_Normal.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_2Gun_Special.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_2Gun_Special_Sub.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_2Gun_Zoom.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_Cube.cpp" />
+    <ClCompile Include="..\Private\Camera_Action.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_Cube_Main.cpp" />
+    <ClCompile Include="..\Private\Camera_Fixed.cpp" />
+    <ClCompile Include="..\Private\Camera_Free.cpp" />
+    <ClCompile Include="..\Private\Camera_Target_Matrix.cpp" />
+    <ClCompile Include="..\private\AnimObject.cpp" />
+    <ClCompile Include="..\Private\Camera_Target_Position.cpp" />
+    <ClCompile Include="..\Private\Bullet_Player_2Gun.cpp" />
+    <ClCompile Include="..\Private\Coin.cpp" />
+    <ClCompile Include="..\Private\Effect_Base.cpp" />
+    <ClCompile Include="..\Private\Enemy_Boss_Leviathan.cpp" />
+    <ClCompile Include="..\Private\Enemy_Boss_Leviathan_90m.cpp" />
+    <ClCompile Include="..\Private\Cloud.cpp" />
+    <ClCompile Include="..\Private\Cloud_Sky.cpp" />
+    <ClCompile Include="..\Private\Enemy_Leviathan_FireBall.cpp" />
+    <ClCompile Include="..\Private\Enemy_Robella_FireStrom2.cpp" />
+    <ClCompile Include="..\Private\Enemy_Leviathan_Thunder.cpp" />
+    <ClCompile Include="..\Private\Enemy_Leviathan_IceSpear.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Dead.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_CameraAction.cpp" />
+    <ClCompile Include="..\Private\State_Robella_CameraAction.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_CameraAction.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Call.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Jump_Landing.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Jump_Up.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Run_Hover.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Run_Swerve_L.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Run_Swerve_R.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Stop_Land.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skate_Stop_Water.cpp" />
+    <ClCompile Include="..\Private\Leviathan_Crystal.cpp" />
+    <ClCompile Include="..\Private\Time_Illusion.cpp" />
+    <ClCompile Include="..\Private\GrassMesh.cpp" />
+    <ClCompile Include="..\Private\Enemy_Robella_FireBall.cpp" />
+    <ClCompile Include="..\Private\Enemy_Robella_FireBall2.cpp" />
+    <ClCompile Include="..\Private\Enemy_Robella_FireStrom.cpp" />
+    <ClCompile Include="..\Private\Enemy_Robella_PoisonFog.cpp" />
+    <ClCompile Include="..\Private\Effect_Trail.cpp" />
+    <ClCompile Include="..\Private\Camera_Target_Position_Lerp.cpp" />
+    <ClCompile Include="..\Private\Equipment.cpp" />
+    <ClCompile Include="..\Private\Grass_Desert.cpp" />
+    <ClCompile Include="..\Private\Gray_Rock.cpp" />
+    <ClCompile Include="..\Private\Enemy_Weaver_Frozen.cpp" />
+    <ClCompile Include="..\Private\Enemy_Weaver_Hurricane.cpp" />
+    <ClCompile Include="..\Private\Enemy_Weaver_ShockWave.cpp" />
+    <ClCompile Include="..\Private\Light_Sun.cpp" />
+    <ClCompile Include="..\Private\Light_Target.cpp" />
+    <ClCompile Include="..\Private\Minigame_Manager.cpp" />
+    <ClCompile Include="..\Private\Mobility_Glider.cpp" />
+    <ClCompile Include="..\Private\Mobility_MotorCycle.cpp" />
+    <ClCompile Include="..\Private\Npc_Cooker.cpp" />
+    <ClCompile Include="..\Private\Dragon_Appear_Trigger.cpp" />
+    <ClCompile Include="..\Private\Enemy_Boomb_Dragon.cpp" />
+    <ClCompile Include="..\Private\Enemy_Boss_Dragon.cpp" />
+    <ClCompile Include="..\Private\Enemy_Boss_Robella.cpp" />
+    <ClCompile Include="..\Private\Enemy_Boss_Weaver.cpp" />
+    <ClCompile Include="..\Private\Bullet_Laser.cpp" />
+    <ClCompile Include="..\Private\Bullet_Normal.cpp" />
+    <ClCompile Include="..\Private\Enemy_Thunder_Dragon.cpp" />
+    <ClCompile Include="..\Private\Enemy_Arrow.cpp" />
+    <ClCompile Include="..\Private\Gangster_Cap.cpp" />
+    <ClCompile Include="..\Private\Enemy_Bullet_Dragon.cpp" />
+    <ClCompile Include="..\Private\HunterDog.cpp" />
+    <ClCompile Include="..\Private\HyenaGang_Shooter.cpp" />
+    <ClCompile Include="..\Private\Habaka_Admiral.cpp" />
+    <ClCompile Include="..\Private\Item.cpp" />
+    <ClCompile Include="..\Private\Item_Manager.cpp" />
+    <ClCompile Include="..\Private\MechanicalCity_DoorKeeper.cpp" />
+    <ClCompile Include="..\Private\MechanicalCity_Gunner.cpp" />
+    <ClCompile Include="..\Private\MechanicalCity_SwordGhost.cpp" />
+    <ClCompile Include="..\Private\Mutation_HunterDog.cpp" />
+    <ClCompile Include="..\Private\MechanicalCity_DoubleEdgedSwordAdept.cpp" />
+    <ClCompile Include="..\Private\Mutation_Orc.cpp" />
+    <ClCompile Include="..\Private\Mutation_Mechanic.cpp" />
+    <ClCompile Include="..\Private\Npc.cpp" />
+    <ClCompile Include="..\Private\Npc_Shirley.cpp" />
+    <ClCompile Include="..\Private\Order.cpp" />
+    <ClCompile Include="..\Private\Order_Manager.cpp" />
+    <ClCompile Include="..\private\Portal.cpp" />
+    <ClCompile Include="..\Private\Quest.cpp" />
+    <ClCompile Include="..\Private\Quest_Manager.cpp" />
+    <ClCompile Include="..\Private\Region.cpp" />
+    <ClCompile Include="..\Private\Ring.cpp" />
+    <ClCompile Include="..\Private\Rock_All.cpp" />
+    <ClCompile Include="..\Private\Room.cpp" />
+    <ClCompile Include="..\Private\Shelf_Item.cpp" />
+    <ClCompile Include="..\Private\Stair.cpp" />
+    <ClCompile Include="..\Private\State_Angel_Apear.cpp" />
+    <ClCompile Include="..\Private\Effect_Factory.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Effect_Manager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Effect_Mesh.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Effect_Point.cpp" />
+    <ClCompile Include="..\Private\Effect_Rect.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Enemy_Boss.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Enemy_Boss_Angel.cpp" />
+    <ClCompile Include="..\Private\Enemy_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\MapObj_Instance.cpp" />
+    <ClCompile Include="..\Private\HyenaGang_Minions.cpp" />
+    <ClCompile Include="..\Private\Mutation.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\private\State.cpp" />
+    <ClCompile Include="..\Private\Enemy.cpp" />
+    <ClCompile Include="..\Private\imgui.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Imgui_Manager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\imgui_demo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\imgui_draw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\imgui_impl_dx11.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\imgui_impl_win32.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\imgui_tables.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\imgui_widgets.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Level_Edit_Anim.cpp" />
+    <ClCompile Include="..\Private\Level_Edit_UI.cpp" />
+    <ClCompile Include="..\Private\Level_GamePlay.cpp" />
+    <ClCompile Include="..\Private\Level_Loading.cpp" />
+    <ClCompile Include="..\Private\Level_Logo.cpp" />
+    <ClCompile Include="..\Private\Level_Menu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Loader.cpp" />
+    <ClCompile Include="..\Private\Loader_Edit_Anim.cpp" />
+    <ClCompile Include="..\Private\Loader_Edit_UI.cpp" />
+    <ClCompile Include="..\Private\Loader_GamePlay.cpp" />
+    <ClCompile Include="..\private\Loader_Logo.cpp" />
+    <ClCompile Include="..\Private\Loader_Menu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\private\Loading_Anim.cpp" />
+    <ClCompile Include="..\Private\MainApp.cpp" />
+    <ClCompile Include="..\Private\Grass.cpp" />
+    <ClCompile Include="..\Private\State_AI.cpp" />
+    <ClCompile Include="..\private\State_Angel_Apear_Ready.cpp" />
+    <ClCompile Include="..\private\State_Angel_Dead.cpp" />
+    <ClCompile Include="..\private\State_Angel_Idle.cpp" />
+    <ClCompile Include="..\private\State_Angel_Laser_Attack.cpp" />
+    <ClCompile Include="..\private\State_Angel_Laser_SkillA.cpp" />
+    <ClCompile Include="..\private\State_Angel_Laser_SkillA_L.cpp" />
+    <ClCompile Include="..\private\State_Angel_Laser_SkillA_R.cpp" />
+    <ClCompile Include="..\private\State_Angel_Laser_SkillB.cpp" />
+    <ClCompile Include="..\private\State_Angel_Laser_Skill_End.cpp" />
+    <ClCompile Include="..\private\State_Angel_Reset.cpp" />
+    <ClCompile Include="..\private\State_Angel_Run.cpp" />
+    <ClCompile Include="..\private\State_Angel_Run_L.cpp" />
+    <ClCompile Include="..\private\State_Angel_Run_R.cpp" />
+    <ClCompile Include="..\private\State_Angel_Shield.cpp" />
+    <ClCompile Include="..\private\State_Angel_Swing_Attack.cpp" />
+    <ClCompile Include="..\private\State_Angel_Ult_Skill_End.cpp" />
+    <ClCompile Include="..\private\State_Angel_Ult_Skill_Start.cpp" />
+    <ClCompile Include="..\private\State_Angel_BackWard.cpp" />
+    <ClCompile Include="..\private\State_Angel_Turn_L.cpp" />
+    <ClCompile Include="..\private\State_Angel_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Boss_Attack.cpp" />
+    <ClCompile Include="..\Private\State_Boss_Awake.cpp" />
+    <ClCompile Include="..\Private\State_Boss_Dash.cpp" />
+    <ClCompile Include="..\Private\State_Boss_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Boss_JumpAttack.cpp" />
+    <ClCompile Include="..\Private\State_Boss_KeepAttack.cpp" />
+    <ClCompile Include="..\Private\State_Boss_Shield.cpp" />
+    <ClCompile Include="..\Private\State_Boss_SitDown.cpp" />
+    <ClCompile Include="..\Private\State_Boss_SwingAttack.cpp" />
+    <ClCompile Include="..\Private\State_Boss_UltraAttack.cpp" />
+    <ClCompile Include="..\private\State_Boss.cpp" />
+    <ClCompile Include="..\Private\State_Cooker_Cooking.cpp" />
+    <ClCompile Include="..\Private\State_Cooker_Cooking_Complete.cpp" />
+    <ClCompile Include="..\Private\State_Cooker_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Apear.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack1.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack2.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack3.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack4.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack5.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack6.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack7.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack8.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Attack9.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Bullet.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Chase.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Dead.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_DoEnd.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Fall_Land.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Fall_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Patrol.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Patrol_Apear.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Run.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_RunEnd.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_TurnL.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_TurnR.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Ult_Attack1.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Ult_Attack2.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Ult_Attack3.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Weak_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Weak_End.cpp" />
+    <ClCompile Include="..\Private\State_Dragon_Weak_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Attack_Chop.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Attack_JumpChop.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Attack_KeepHitting.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Damage_B2.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Special_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Special_Ing.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Special_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Dash.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Attack_Swing.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Attack_Stand.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Attack_Moving.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Attack_FrontJump.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Attack_Kick_A.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Damage_F.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Idle_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Attack_SeriesShot_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Attack_SeriesShot_Ing.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Attack_ThrowBomb.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Attack_SeriesShot_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Damage_F.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Eat_Find.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Eat.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Attack_DownHit.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Attack_UpHit.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Damage_F.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Damage_F.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Idle_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Attack_Charge_Shot.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Attack_Normal_Shot.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Damage_F.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Idle_Battle.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Idle_Battle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Idle_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Walk_F.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Shooter_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Mechanic_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Habaka_Admiral_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoorKeeper_Idle_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Apear.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Jump_Turn.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Look_Center_Roar.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Roar_0.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_BL_A.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_BL_B.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_BL_C.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_F_C.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_FR.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_F_A.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Down_F_B.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Up_BR.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Up_F.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Attack_Up_FL.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Jump_TurnL.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Jump_TurnR.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Weak.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Turn.cpp" />
+    <ClCompile Include="..\Private\State_Leviathan_Look_Out_Roar.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle_Idle.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle_Jump_End.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle_Jump_Loop.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle_Jump_Run.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle_Jump_Start.cpp" />
+    <ClCompile Include="..\Private\State_MotorCycle_Run.cpp" />
+    <ClCompile Include="..\Private\State_Npc.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Base_Charge.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Jump_Charge_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Jump_Charge_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Jump_Charge_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Skill_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Skill_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Attack_Skill_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Axe_Skill_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Down.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Into_Down.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Into_Up.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Down.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Roll_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Roll_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Roll_Up_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Roll_Up_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Left_Up.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Out.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Out_Jump.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Out_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Down.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Roll_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Roll_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Roll_Up_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Roll_Up_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Right_Up.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Stop.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Up_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Climb_Up_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Base_Charge.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_E.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Jump_Charge_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Jump_Charge_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Jump_Charge_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Skill_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Skill_Normal_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Skill_Speacial.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Attack_Skill_Speacial_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Cube_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_Begin_F.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_Loop_F.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_Stop.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_Up.cpp" />
+    <ClCompile Include="..\Private\State_Player_Glide_Up_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Hand_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Hand_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_Hand_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Hand_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_Hand_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Hand_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Drive.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Drive_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Free.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_JumpStart.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Roll_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Roll_Base.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_TurnL.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_TurnR.cpp" />
+    <ClCompile Include="..\Private\State_Player_Mount_Up.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Base_Charge_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Base_Charge_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Base_Charge_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Jump_Charge_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Jump_Charge_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Jump_Charge_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Skill_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Skill_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Attack_Skill_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Skill_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Shield_Skill_Special.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Jump_Charge_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Jump_Charge_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Normal_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Special_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Special_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Special_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Special_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Special_E.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_2Gun_Appear.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_2Gun_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Appear.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Cube_Appear.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Cube_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_None_Appear.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_None_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Shield_Appear.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Shield_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Sword_Appear.cpp" />
+    <ClCompile Include="..\Private\State_Player_UI_Sword_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Robella_1Phase_Down.cpp" />
+    <ClCompile Include="..\Private\State_Robella_1Phase_Down_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Robella_1Phase_Down_Up.cpp" />
+    <ClCompile Include="..\Private\State_Robella_2Phase_Down.cpp" />
+    <ClCompile Include="..\Private\State_Robella_2Phase_Down_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Robella_2Phase_Down_Up.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Apear.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack2_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack2_End.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack2_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack3.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack4.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack5.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack6.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack7.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack8.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack9_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack9_End.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Change_Phase.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Dead.cpp" />
+    <ClCompile Include="..\Private\State_Robella_UltAttack_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Robella_UltAttack_End.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Brilliant.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Conversation_A.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Conversation_B.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Conversation_C.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Greeting.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Hungry.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_WalkBack.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_WalkFront.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_WalkLeft.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_WalkRight.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_Zoom.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Base_Charge_Zoom_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Jump_Charge_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Jump_Charge_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_Jump_Charge_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Attack_E.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Skill_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Skill_Normal_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Skill_Special.cpp" />
+    <ClCompile Include="..\Private\State_Player_2Gun_Skill_Special_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Attack.cpp" />
+    <ClCompile Include="..\Private\State_Player_Attack_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Attack_Base_Charge.cpp" />
+    <ClCompile Include="..\Private\State_Player_Attack_Jump_Charge.cpp" />
+    <ClCompile Include="..\Private\State_Player_Attack_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_Damaged_High_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Player_Damaged_High_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Damaged_Low.cpp" />
+    <ClCompile Include="..\Private\State_Player_Damaged_Medium.cpp" />
+    <ClCompile Include="..\Private\State_Player_Eat.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skill_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skill_Normal_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skill_Special.cpp" />
+    <ClCompile Include="..\Private\State_Player_Skill_Special_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Swim_Dash.cpp" />
+    <ClCompile Include="..\Private\State_Player_Swim_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Swim_Loop_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Swim_Loop_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Skill_Special.cpp" />
+    <ClCompile Include="..\Private\State_Robella_1Phase.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Dance.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Idle_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Run.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Run_Return.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Sit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_SitIdle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Sittingdown.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Attack_Swing.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Attack_TurnTurn.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Attack_Dash.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_StandUp.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Walk.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Walk_B.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Walk_F.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Walk_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Gangster_Cap_Walk_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Dead_End.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Dead_1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Run.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Idle_Battle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Attack_Bite.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Attack_Find_Dash_Bite.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Walk_Turn_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Walk_Turn_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Walk_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Walk_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Walk_B.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Walk.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Run_Return.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Idle_Act_A.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Run.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Run_Return.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Turn_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Turn_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Attack_Normal_Shot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Attack_Charge_Shot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Damage_F.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Damage_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Damage_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Damage_B.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Walk.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Walk_B.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Walk_F.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Walk_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HyenaGang_Minions_Walk_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Damage_L.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Damage_R.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Damage_B_Back.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_HunterDog_Damage_B.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_Gunner_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_SwordGhost_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Dead_2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Dead_3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Dead_End.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Dead_1.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Damage_B.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Damage_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Damage_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Attack_UpHit.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Attack_DownHit.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_HunterDog_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_MechanicalCity_DoubleEdgedSwordAdept_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Orc_Idle_Normal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Run_Return.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Skill_.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Idle_Normal.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Run.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Enemy_Mutation_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Handler.cpp" />
+    <ClCompile Include="..\Private\State_Manager.cpp" />
+    <ClCompile Include="..\Private\State_Player.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Air_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Air_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Air_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Air_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_C.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Base_Charge.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_D.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_E.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Jump_Charge_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Sword_Attack_Roll.cpp" />
+    <ClCompile Include="..\Private\State_Player_Jump_A.cpp" />
+    <ClCompile Include="..\Private\State_Player_Jump_B.cpp" />
+    <ClCompile Include="..\Private\State_Player_Jump_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Jump_Fall.cpp" />
+    <ClCompile Include="..\Private\State_Player_Roll_Back.cpp" />
+    <ClCompile Include="..\Private\State_Player_Roll_Back_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Roll_Forword.cpp" />
+    <ClCompile Include="..\Private\State_Player_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Player_Roll_Forword_Air.cpp" />
+    <ClCompile Include="..\Private\State_Player_Roll_Forword_End.cpp" />
+    <ClCompile Include="..\Private\State_Player_Run.cpp" />
+    <ClCompile Include="..\Private\State_Player_Walk.cpp" />
+    <ClCompile Include="..\Private\State_Robella_2Phase.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Attack1.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Ready.cpp" />
+    <ClCompile Include="..\Private\State_Robella_Patrol.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Surprise.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Thank.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Worry_A.cpp" />
+    <ClCompile Include="..\Private\State_Shirley_Worry_B.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Apear.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_01.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_02.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_03.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_04.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_05_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_05_End.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_06_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_06_Break.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_06_End.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_06_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_07.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_08.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_09.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_10.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_11_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_11_End.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_11_Loop.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Attack_12.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Dead.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Idle.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Ready.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Reset.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Shield.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Turn_L.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Turn_R.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Walk_B.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Walk_F.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Walk_L.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Walk_R.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Weak_Begin.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Weak_End.cpp" />
+    <ClCompile Include="..\Private\State_Weaver_Weak_Loop.cpp" />
+    <ClCompile Include="..\Private\Structs.cpp" />
+    <ClCompile Include="..\Private\Structs_All.cpp" />
+    <ClCompile Include="..\Private\Structs_Desert.cpp" />
+    <ClCompile Include="..\Private\Terrain_Navi.cpp" />
+    <ClCompile Include="..\Private\TestPlayer.cpp" />
+    <ClCompile Include="..\Private\Tree.cpp" />
+    <ClCompile Include="..\Private\Tile.cpp" />
+    <ClCompile Include="..\Private\Rock.cpp" />
+    <ClCompile Include="..\Private\Player.cpp" />
+    <ClCompile Include="..\Private\Sky.cpp" />
+    <ClCompile Include="..\Private\Sound_Manager.cpp" />
+    <ClCompile Include="..\Private\Terrain.cpp" />
+    <ClCompile Include="..\Private\UI.cpp" />
+    <ClCompile Include="..\Private\UI_Alert_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Alert_Window.cpp" />
+    <ClCompile Include="..\Private\UI_Attacked_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Attack_Target.cpp" />
+    <ClCompile Include="..\Private\UI_Boss_Hp_Back.cpp" />
+    <ClCompile Include="..\Private\UI_Boss_Hp_Bar.cpp" />
+    <ClCompile Include="..\Private\UI_Boss_Hp_Lerp.cpp" />
+    <ClCompile Include="..\Private\UI_Boss_Name.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_Button.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_Detail.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_FoodSelect.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_GaugeBar.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_GaugeNum.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_IngrdNum.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_Window.cpp" />
+    <ClCompile Include="..\Private\UI_Crystal_Hp_Bar.cpp" />
+    <ClCompile Include="..\Private\UI_CurFood_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_CurFood_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Cursor.cpp" />
+    <ClCompile Include="..\Private\UI_Damage_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Dash_Bar.cpp" />
+    <ClCompile Include="..\Private\UI_Dist_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Enemy_Attack.cpp" />
+    <ClCompile Include="..\Private\UI_Enemy_Hp_Bar.cpp" />
+    <ClCompile Include="..\Private\UI_Enemy_Indicator.cpp" />
+    <ClCompile Include="..\Private\UI_Enemy_Name.cpp" />
+    <ClCompile Include="..\Private\UI_Enemy_Rank.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_Food.cpp" />
+    <ClCompile Include="..\Private\UI_Energy_Gear.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Button.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Detail.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Remove.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Weapon_L.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Weapon_M.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Weapon_R.cpp" />
+    <ClCompile Include="..\Private\UI_Equip_Window.cpp" />
+    <ClCompile Include="..\Private\UI_Fin.cpp" />
+    <ClCompile Include="..\Private\UI_Food_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Minigame_Explain.cpp" />
+    <ClCompile Include="..\Private\UI_Minigame_Gain.cpp" />
+    <ClCompile Include="..\Private\UI_Minigame_Notice.cpp" />
+    <ClCompile Include="..\Private\UI_Minigame_Result.cpp" />
+    <ClCompile Include="..\Private\UI_Minigame_Start.cpp" />
+    <ClCompile Include="..\Private\UI_Minimap.cpp" />
+    <ClCompile Include="..\Private\UI_Minimap_Arrow.cpp" />
+    <ClCompile Include="..\Private\UI_Order.cpp" />
+    <ClCompile Include="..\Private\UI_Guide_Hand_Anim.cpp" />
+    <ClCompile Include="..\Private\UI_Guide_Talk_Anim.cpp" />
+    <ClCompile Include="..\Private\UI_Guide_Window.cpp" />
+    <ClCompile Include="..\Private\UI_Gun_CrossHair.cpp" />
+    <ClCompile Include="..\Private\UI_Heal_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Cook_Ingredient.cpp" />
+    <ClCompile Include="..\Private\UI_Inventory.cpp" />
+    <ClCompile Include="..\Private\UI_Inven_Button.cpp" />
+    <ClCompile Include="..\Private\UI_Food_Window.cpp" />
+    <ClCompile Include="..\Private\UI_Inven_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Item.cpp" />
+    <ClCompile Include="..\Private\UI_Food_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Item_Detail.cpp" />
+    <ClCompile Include="..\Private\UI_Item_Num.cpp" />
+    <ClCompile Include="..\Private\UI_Loading_Anim.cpp" />
+    <ClCompile Include="..\Private\UI_Loading_Bar.cpp" />
+    <ClCompile Include="..\Private\AnimGround.cpp" />
+    <ClCompile Include="..\Private\UI_Loading_Screen.cpp" />
+    <ClCompile Include="..\Private\UI_Logo.cpp" />
+    <ClCompile Include="..\Private\UI_Logo_Back.cpp" />
+    <ClCompile Include="..\Private\UI_Logo_Start.cpp" />
+    <ClCompile Include="..\Private\UI_Main_Button.cpp" />
+    <ClCompile Include="..\Private\UI_Main_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Menu_Back.cpp" />
+    <ClCompile Include="..\Private\UI_Menu_Button.cpp" />
+    <ClCompile Include="..\Private\UI_Order_Anim.cpp" />
+    <ClCompile Include="..\Private\UI_Order_Button.cpp" />
+    <ClCompile Include="..\Private\UI_Order_Icon.cpp" />
+    <ClCompile Include="..\Private\UI_Order_Item.cpp" />
+    <ClCompile Include="..\Private\UI_Order_ItemName.cpp" />
+    <ClCompile Include="..\Private\UI_Order_Result.cpp" />
+    <ClCompile Include="..\Private\UI_Order_ResultButton.cpp" />
+    <ClCompile Include="..\Private\UI_Order_TenResult.cpp" />
+    <ClCompile Include="..\Private\UI_PlaceMark.cpp" />
+    <ClCompile Include="..\Private\UI_PlaceName.cpp" />
+    <ClCompile Include="..\Private\UI_Player_Hp_Back.cpp" />
+    <ClCompile Include="..\Private\UI_Player_Hp_Bar.cpp" />
+    <ClCompile Include="..\Private\UI_Proceeding.cpp" />
+    <ClCompile Include="..\Private\UI_Quest.cpp" />
+    <ClCompile Include="..\Private\UI_Quest_Complete.cpp" />
+    <ClCompile Include="..\Private\UI_Quest_Mark.cpp" />
+    <ClCompile Include="..\Private\UI_Quest_Notice.cpp" />
+    <ClCompile Include="..\Private\UI_Shortkey.cpp" />
+    <ClCompile Include="..\Private\UI_Skill_Enable.cpp" />
+    <ClCompile Include="..\Private\UI_Skill_Gauge.cpp" />
+    <ClCompile Include="..\Private\UI_SKill_L.cpp" />
+    <ClCompile Include="..\Private\UI_Skill_M.cpp" />
+    <ClCompile Include="..\Private\UI_Skill_R.cpp" />
+    <ClCompile Include="..\Private\UI_Skill_Time.cpp" />
+    <ClCompile Include="..\Private\UI_Solid.cpp" />
+    <ClCompile Include="..\Private\UI_Stamina_Back.cpp" />
+    <ClCompile Include="..\Private\UI_Stamina_Bar.cpp" />
+    <ClCompile Include="..\Private\UI_Talk_Window.cpp" />
+    <ClCompile Include="..\Private\UI_Weapon_Skill.cpp" />
+    <ClCompile Include="..\Private\Unit.cpp" />
+    <ClCompile Include="..\Private\Water.cpp" />
+    <ClCompile Include="..\Private\Water_Base.cpp" />
+    <ClCompile Include="..\Private\Weapon.cpp" />
+    <ClCompile Include="..\Private\Weapon_2Gun.cpp" />
+    <ClCompile Include="..\Private\Weapon_Axe.cpp" />
+    <ClCompile Include="..\Private\Weapon_Bow.cpp" />
+    <ClCompile Include="..\Private\Weapon_CubeL.cpp" />
+    <ClCompile Include="..\Private\Weapon_CubeR.cpp" />
+    <ClCompile Include="..\Private\Weapon_Hammer.cpp" />
+    <ClCompile Include="..\Private\Weapon_Shield.cpp" />
+    <ClCompile Include="..\Private\Weapon_ShieldAxe.cpp" />
+    <ClCompile Include="..\Private\Weapon_Wastebasket.cpp" />
+    <ClCompile Include="..\Private\Weapon_Stic.cpp" />
+    <ClCompile Include="..\Private\Weapon_Sword.cpp" />
+    <ClCompile Include="..\Private\Weapon_Tool.cpp" />
+    <ClCompile Include="..\Private\Window_Demo.cpp" />
+    <ClCompile Include="..\private\Window_Imgui.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\private\Window_LevelInfo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Private\Window_Tool_Animation.cpp" />
+    <ClCompile Include="..\Private\Window_Tool_Effect.cpp" />
+    <ClCompile Include="..\Private\Window_Tool_Option.cpp" />
+    <ClCompile Include="..\Private\Window_Tool_Map.cpp" />
+    <ClCompile Include="..\Private\Window_Tool_UI.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Client.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_Depth.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxAnimInstance.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxAnimModel.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxColor.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxCubeTex.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxModel.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxModelEffect.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxModelInstance.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxNorTex.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxPointInstance.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxRectInstance.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxTex.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxTexUI.hlsl" />
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxTexWater.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Bin\Resources\Json\Effect\EffectData.json" />
+    <None Include="..\Bin\Resources\Json\Effect\EffectData_Han.json">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </None>
+    <None Include="..\Bin\Resources\Json\Effect\EffectData_In.json" />
+    <None Include="..\Bin\Resources\Json\Effect\EffectData_Jeon.json" />
+    <None Include="..\Bin\Resources\Json\Effect\EffectData_Shin.json" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
