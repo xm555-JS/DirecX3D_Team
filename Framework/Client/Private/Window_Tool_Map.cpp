@@ -659,11 +659,6 @@ void CWindow_Tool_Map::Save_ObjectData(void)
 		}
 	}
 
-	//sort(listObjectDesc.begin(), listObjectDesc.end(), [](GAMEOBJECT_DESC pSour, GAMEOBJECT_DESC pDest)
-	//	{
-	//		return pSour.iModelID < pDest.iModelID;
-	//	});
-
 	json jSave;
 	for (auto& Object : listObjectDesc)
 	{
